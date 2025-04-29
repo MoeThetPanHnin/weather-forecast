@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+Define gradient for sunny background
+:root {
+  --bg-sunny: linear-gradient(to top, #fceabb, #f8b500);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html, #root {
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Center app and add smooth background transition */
+.app-container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  margin: 0 auto; 
+  padding: 20px;
+  transition:background 0.5s;
+  overflow: hidden;
+}
+
+
+
+/* Glass-morphism card effect */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.2);
+  padding:2rem;
+  border-radius:1.5rem;
+  box-shadow:0 8px 32px rgba(0,0,0,0.1);
+  text-align:center;
+  max-width:400px;
+  width:90%;
+}
+
+.search-bar {
+  display:flex;
+  margin-bottom:1rem;
+}
+
+.search-bar input {
+  flex:1;
+  padding:0.5rem;
+  border:none;
+  border-radius:0.5rem 0 0 0.5rem;
+}
+
+.search-bar button {
+  padding:0 1rem;
+  border:none;
+  border-radius:0 0.5rem 0.5rem 0;
+  cursor:pointer;
+}
+
+.unit-toggle {
+  margin-bottom:1rem;
+  cursor:pointer;
+}
+
+.weather-card img {
+  width:100px;
+}
+
+.forecast-container {
+  display:flex;
+  justify-content:space-between;
+  margin-top:1rem;
+}
+
+.forecast-day {
+  background: rgba(255,255,255,0.3);
+  padding:0.5rem;
+  border-radius:1rem;
+  flex:1;
+  margin:0 0.25rem;
+}
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 10px;
+    margin: 10px 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    overflow: hidden;
   }
 }

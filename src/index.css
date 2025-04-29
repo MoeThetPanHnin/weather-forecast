@@ -1,13 +1,134 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root { 
+  --bg-sunny: linear-gradient(to top, #fceabb,#f8b500);
+  --bg-rainy: linear-gradient(to top, #a1c4fd,#c2e9fb);
+  --bg-cloudy: linear-gradient(to top, #dfe9f3,#e2e2e2);
+  --bg-snowy: linear-gradient(to top, #d3cce3,#e9e4f0);
+  --bg-stormy: linear-gradient(to top, #4b6cb7,#182848);
+  --bg-windy: linear-gradient(to top, #fbc2eb,#a6c1ee);
+  --bg-foggy: linear-gradient(to top, #dfe9f3,#e2e2e2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html, #root { 
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg-sunny);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.app-container { 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-sunny);
+  transition: background 0.5s;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.2);
+  padding: 2rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: background 0.5s;
+  background: var(--bg-sunny);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar { 
+  display: flex; 
+  width: 100%;
+  margin-bottom: 1rem; 
+  background: rgba(255,255,255,0.3);
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.search-bar input { 
+  flex: 1;
+  padding: .5rem;
+  border: none;
+  border-radius: .5rem 0 0 .5rem;
+  background: rgba(255,255,255,0.3);
+}
+
+.search-bar button { 
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0 .5rem .5rem 0;
+  cursor: pointer;
+  background: rgba(255,255,255,0.3);
+}
+
+.unit-toggle { 
+  margin-bottom: 1rem;
+  cursor: pointer;
+  background: rgba(255,255,255,0.3);
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.weather-card img { 
+  width: 100px;
+}
+
+.forecast-container {
+  display: flex;
+  overflow-x: auto; /* Allow scroll if needed */
+  gap: .5rem;
+  margin-top: 1rem;
+  padding: .5rem 0;
+  border-radius: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  justify-content: flex-start; /* align left */
+  width: 100%;
+}
+
+.forecast-container::-webkit-scrollbar {
+  display: none;
+}
+
+.forecast-day {
+  background: rgba(255,255,255,0.3);
+  padding: .5rem;
+  border-radius: 1rem;
+  min-width: 80px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 450px) {
+  .glass-card {
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    border-radius: .5rem;
+  }
+
+  .forecast-container {
+    justify-content: flex-start;
+  }
 }
