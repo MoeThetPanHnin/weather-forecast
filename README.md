@@ -21,7 +21,7 @@ A friendly little weather dashboard that shows you **today’s conditions and a 
 |-------|---------|
 | UI    | plain **HTML + CSS** (no frameworks) |
 | Styling | a dash of **CSS animations** + Google Fonts |
-| Logic | **JavaScript (ES6)** |
+| Logic | **TypeScript** |
 | Data  | **OpenWeatherMap API** |
 
 *(Feel free to swap in React, Tailwind, TypeScript, etc. — it’s your playground!)*
